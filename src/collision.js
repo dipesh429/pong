@@ -1,5 +1,6 @@
 import {pixi} from 'pixi.js';
 import CONFIG from './config';
+import {Howl, Howler} from 'howler';
 
 import  { getball } from './stages/mainStage';
 import  { batleft } from './stages/mainStage';
@@ -20,9 +21,11 @@ var collision=()=>{
 		if((getball.y >=batright.y && getball.y<=(batright.y+100)) || (getball.y >= batleft.y && getball.y<=(batleft.y+100))) {
 			// console.log('hey')
 
-			// const sound = new Howl({
-			// 	src:''
-			// })
+			const sound = new Howl({
+				src:'1.mp3'
+			})
+
+			sound.play()
 
 			ball.collision_move()
 		}

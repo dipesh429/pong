@@ -3,6 +3,8 @@ import CONFIG from '../config';
 import  { msg1 } from '../stages/mainStage';
 import  { msg2 } from '../stages/mainStage';
 import  { ticker } from '../stages/mainStage';
+import {Howl, Howler} from 'howler';
+
 
 
 // ball implementation of battle pong game
@@ -21,8 +23,6 @@ export default class Ball{
 
     draw_ball(){
 
-
-        
         this.ball.position.set(this.x,this.y)
         this.ball.scale.set(0.2,0.2)
     
@@ -35,6 +35,9 @@ export default class Ball{
 
          if(x=="right") msg1.text=parseInt(msg1._text)+1
         else    msg2.text=parseInt(msg2._text)+1
+
+
+            
 
         this.ball.x=CONFIG.width/2
         this.ball.y=CONFIG.height/2
@@ -65,6 +68,7 @@ export default class Ball{
     }
 
     check_boundary(){
+
 
 
         if(this.ball.y<=0 || this.ball.y>=(CONFIG.height-this.ball.height)){
